@@ -211,6 +211,7 @@ mindmap
 - **[dsh-lark-meeting-notifier](https://github.com/yeruizhi/dsh-lark-meeting-notifier)**（[@yeruizhi](https://github.com/yeruizhi) · 2026-08-14）— 飞书会议提醒悬浮框：展示今日/明日会议、多闹钟闪烁提醒，在你跟 AI 聊得忘我时提醒「该去跟碳基生命开会了」。
 - **[dsh-reverse-skill](https://github.com/dhicoc/dsh-reverse-skill)**（[@dhicoc](https://github.com/dhicoc) · 2026-08-14）— 85 个 SKILL.md 组成的逆向工程、授权渗透测试与安全研究技能包，安装后按任务自动路由对应技能。
 - **[dsh-vision-router](https://github.com/ysr666/dsh-vision-router)**（[@ysr666](https://github.com/ysr666) · 2026-08-14）— 给纯文本 DSH Agent 装上眼睛：内置免 key 视觉链路（匿名端点）+ 像素级工具集（问答/定位/裁剪/像素对比/取色/OCR/SVG 描摹/抠图/截图），无需 Python，一条命令安装，图片回合像普通工具调用回合一样工作。注意：默认匿名端点会把图片发往第三方，介意隐私请自行配置端点。
+- **[dsh-permission-rules](https://github.com/PerryLink/dsh-permission-rules)**（[@PerryLink](https://github.com/PerryLink) · 2026-08-15）— Claude Code 风格的声明式权限规则：在 tools/pre-execute 瀑布上按序匹配 allow/deny/ask YAML 规则（工具名、参数、工作区路径、agent 身份），带完整会话日志审计、干跑模式与热重载，可与 dsh-auto-review 组成「规则先行、AI 兜底」闭环。
 
 ## 🔍 我们如何维护这个列表
 
