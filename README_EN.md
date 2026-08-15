@@ -211,6 +211,7 @@ Self-submitted recommendations from plugin authors, following the [contributing 
 - **[dsh-lark-meeting-notifier](https://github.com/yeruizhi/dsh-lark-meeting-notifier)** ([@yeruizhi](https://github.com/yeruizhi) · 2026-08-14) — A Feishu/Lark meeting-reminder panel: today's and tomorrow's meetings with flashing alarms, nudging you when it's time to "go meet carbon-based lifeforms".
 - **[dsh-reverse-skill](https://github.com/dhicoc/dsh-reverse-skill)** ([@dhicoc](https://github.com/dhicoc) · 2026-08-14) — A pack of 85 SKILL.md files covering reverse engineering, authorized pentesting, and security research, routed on demand.
 - **[dsh-vision-router](https://github.com/ysr666/dsh-vision-router)** ([@ysr666](https://github.com/ysr666) · 2026-08-14) — Eyes for text-only DSH agents: a built-in keyless vision chain plus pixel-level tools (Q&A, grounding, crop, pixel diff, colors, OCR, SVG trace, cutout, screenshots) — no Python, one-command install, and image turns behave like ordinary tool-calling turns. Note: the default anonymous endpoint sends images to a third party — configure your own endpoint if that matters to you.
+- **[dsh-doublecheck](https://github.com/PerryLink/dsh-doublecheck)** ([@PerryLink](https://github.com/PerryLink) · 2026-08-15) — Engineering-discipline plugin: grills requirements before the first edit, enforces red/green test-evidence gates, runs an adversarial delivery review, and folds it all into a report with per-dimension verification; /doublecheck session command, en/zh.
 
 ## 🔍 How this list is maintained
 
