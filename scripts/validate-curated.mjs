@@ -65,6 +65,33 @@ for (const fullName of Object.keys(curated.leaderboard_exclusions || {})) {
   }
 }
 
+for (const fullName of Object.keys(curated.market_exclusions || {})) {
+  if (!ownerRepoPattern.test(fullName)) {
+    errors.push(`market_exclusions key "${fullName}" is not a valid owner/repo reference`);
+  }
+}
+
+// data/approved.json is the maintainer's review gate: only approved repositories
+// appear on CATALOG.md / TOP200.md. It must parse, hold valid owner/repo keys,
+// and never overlap with excluded_repos (an excluded repository must not stay
+// approved — scripts/merge.mjs would otherwise re-list it).
+let approved = {};
+try {
+  approved = JSON.parse(await readFile(resolve(root, 'data/approved.json'), 'utf8'));
+} catch (error) {
+  errors.push(`data/approved.json could not be parsed: ${error.message}`);
+}
+const approvedNames = Object.keys(approved);
+const excludedNames = new Set(Object.keys(curated.excluded_repos || {}).map((fullName) => fullName.toLowerCase()));
+for (const fullName of approvedNames) {
+  if (!ownerRepoPattern.test(fullName)) {
+    errors.push(`approved.json key "${fullName}" is not a valid owner/repo reference`);
+  }
+  if (excludedNames.has(fullName.toLowerCase())) {
+    errors.push(`approved.json entry "${fullName}" is also listed in excluded_repos — remove it from one of the two lists`);
+  }
+}
+
 // --- Author showcase sections ----------------------------------------------
 // SHOWCASE.md is the source of truth: one full list per language, then a
 // header line and intro paragraph followed by one hand-maintained entry per
@@ -207,4 +234,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`data/curated.json and the showcase sections are valid — ${overrideCount} category overrides and ${showcaseCount} showcase repositories checked against the GitHub API.`);
+console.log(`data/curated.json, data/approved.json, and the showcase sections are valid — ${overrideCount} category overrides, ${approvedNames.length} approved repositories, and ${showcaseCount} showcase repositories checked against the GitHub API.`);

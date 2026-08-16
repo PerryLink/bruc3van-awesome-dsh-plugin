@@ -1,4 +1,4 @@
-name: Update catalog
+name: Refresh snapshot, review queue, and market file
 
 on:
   schedule:
@@ -20,20 +20,32 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Refresh snapshot and catalog
+      # Fetch the topic snapshot and refresh the review queue.
+      # CATALOG.md / TOP200.md are intentionally NOT regenerated here — they
+      # only change via scripts/merge.mjs after the maintainer has reviewed
+      # data/review/pending.md and recorded decisions in data/approved.json /
+      # data/curated.json. See data/review/README.md.
+      - name: Refresh snapshot and review queue
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: node scripts/update.mjs
-      - name: Regenerate the star leaderboard
-        run: node scripts/top.mjs
+      # data/market.json (the downstream dsh-desktop-safe-market feed) IS a pure
+      # projection of the snapshot + curation, so it is regenerated here and
+      # shipped with the same commit, together with MARKET.md (its preview
+      # page). Its generator carries the circuit breaker (a collapsed pool
+      # aborts the run and keeps yesterday's file).
+      - name: Generate the downstream market file
+        run: node scripts/market.mjs
+      - name: Validate the downstream market file
+        run: node scripts/validate-market.mjs
       - name: Commit changes
         run: |
-          if git diff --quiet; then
-            echo "Snapshot and catalog are already current."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add CATALOG.md TOP200.md data/repositories.json
-          git commit -m "data: refresh dsh-plugin catalog"
+          git add data/repositories.json data/review data/market.json MARKET.md
+          if git diff --cached --quiet; then
+            echo "Snapshot and review queue are already current."
+            exit 0
+          fi
+          git commit -m "data: refresh dsh-plugin snapshot, review queue, and market file"
           git push

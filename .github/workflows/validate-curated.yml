@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'data/curated.json'
+      - 'data/market.json'
       - 'README.md'
       - 'README_EN.md'
       - 'SHOWCASE.md'
@@ -33,3 +34,12 @@ jobs:
         run: node scripts/update.mjs --from-snapshot
       - name: Rebuild the leaderboard from the stored snapshot
         run: node scripts/top.mjs
+      # The market file is regenerated from the PR's own curation state so the
+      # validator checks what main would publish after this PR merges (the
+      # committed file is refreshed by refresh-market.yml on push to main).
+      - name: Rebuild the downstream market file from the stored snapshot
+        run: node scripts/market.mjs --from-snapshot
+      - name: Validate the downstream market file
+        run: node scripts/validate-market.mjs
+      - name: Run the market pipeline tests
+        run: node --test scripts/test-market.mjs

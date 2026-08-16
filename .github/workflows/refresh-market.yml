@@ -1,0 +1,53 @@
+name: Refresh the downstream market file
+
+# Spec §6: a curation change must reach the downstream market immediately
+# after it merges — otherwise a blacklist fix would wait for the next daily
+# cron. This workflow rebuilds data/market.json from the stored snapshot on
+# every push to main that touches data/curated.json and commits it. The daily
+# update-catalog.yml covers the snapshot-refresh path; validate-curated.yml
+# covers the same generation + validation inside PRs.
+#
+# The commit here only touches data/market.json and MARKET.md (its preview
+# page), so it does not re-trigger this workflow (its path filter is
+# data/curated.json).
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/curated.json'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-market
+  cancel-in-progress: true
+
+jobs:
+  market:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Rebuild data/market.json from the stored snapshot
+        run: node scripts/market.mjs --from-snapshot
+      - name: Validate data/market.json
+        run: node scripts/validate-market.mjs
+      - name: Run the market pipeline tests
+        run: node --test scripts/test-market.mjs
+      - name: Commit the refreshed market file
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/market.json MARKET.md
+          if git diff --cached --quiet; then
+            echo "market.json is already current."
+            exit 0
+          fi
+          git commit -m "data: rebuild market.json and its MARKET.md preview after curation change"
+          git push
