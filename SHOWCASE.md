@@ -8,7 +8,6 @@ The complete Author showcase list: self-submitted recommendations from plugin au
 
 ## 📣 作者自荐
 
-- **[dsh-vision-proxy](https://github.com/Flyvhidbwo/dsh-vision-proxy)**（[@Flyvhidbwo](https://github.com/Flyvhidbwo) · 2026-08-14）— DeepSeek 大脑 + 自动识图：附加图片自动经 OpenAI 兼容 VLM 转译成文字后交给 DeepSeek 作答；无 key 时自动探测本地 Ollama。注意：默认配置会把图片发送到第三方 VLM 端点，介意隐私请改用本地端点。
 - **[dsh-memory-gate](https://github.com/GIT121995/dsh-memory-gate)**（[@GIT121995](https://github.com/GIT121995) · 2026-08-14）— 「检索到≠注入」的本地长期记忆：每条记忆须通过 CBDC 四段权威门控才进入上下文，输出可解释的 use/verify/ignore 决策并保留审计日志；默认每次最多注入 3 条、1200 字符，不增加第二次模型调用。
 - **[dsh-lark-meeting-notifier](https://github.com/yeruizhi/dsh-lark-meeting-notifier)**（[@yeruizhi](https://github.com/yeruizhi) · 2026-08-14）— 飞书会议提醒悬浮框：展示今日/明日会议、多闹钟闪烁提醒，在你跟 AI 聊得忘我时提醒「该去跟碳基生命开会了」。
 - **[dsh-reverse-skill](https://github.com/dhicoc/dsh-reverse-skill)**（[@dhicoc](https://github.com/dhicoc) · 2026-08-14）— 85 个 SKILL.md 组成的逆向工程、授权渗透测试与安全研究技能包，安装后按任务自动路由对应技能。
@@ -42,7 +41,6 @@ The complete Author showcase list: self-submitted recommendations from plugin au
 
 ## 📣 Author showcase
 
-- **[dsh-vision-proxy](https://github.com/Flyvhidbwo/dsh-vision-proxy)** ([@Flyvhidbwo](https://github.com/Flyvhidbwo) · 2026-08-14) — Keep DeepSeek as the brain and auto-describe attached images via any OpenAI-compatible VLM; auto-detects local Ollama when no key is set. Note: the default configuration sends images to a third-party VLM endpoint — switch to a local endpoint if that matters to you.
 - **[dsh-memory-gate](https://github.com/GIT121995/dsh-memory-gate)** ([@GIT121995](https://github.com/GIT121995) · 2026-08-14) — Local long-term memory where retrieved ≠ injected: every memory must pass CBDC authority gating before entering context, with explainable use/verify/ignore decisions and a full audit trail; capped at 3 claims / 1,200 characters per turn, no extra model call.
 - **[dsh-lark-meeting-notifier](https://github.com/yeruizhi/dsh-lark-meeting-notifier)** ([@yeruizhi](https://github.com/yeruizhi) · 2026-08-14) — A Feishu/Lark meeting-reminder panel: today's and tomorrow's meetings with flashing alarms, nudging you when it's time to "go meet carbon-based lifeforms".
 - **[dsh-reverse-skill](https://github.com/dhicoc/dsh-reverse-skill)** ([@dhicoc](https://github.com/dhicoc) · 2026-08-14) — A pack of 85 SKILL.md files covering reverse engineering, authorized pentesting, and security research, routed on demand.
