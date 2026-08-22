@@ -1,4 +1,7 @@
 # 🐳 Awesome DSH Plugins
+> **Fork notice:** this repository is a GitHub fork of [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin). All content belongs to its original authors and is republished under the original license; see the commit history for attribution.
+> **转载声明：** 本仓库是上游 [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) 的 GitHub fork（转载），内容版权归原作者所有，按原许可证发布，署名见提交历史。
+
 [![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/bruc3van-awesome-dsh-plugin)
 
 > 用 30 秒为你的 DeepSeek Harness（DSH）找到合适的插件。
