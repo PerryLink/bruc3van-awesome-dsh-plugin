@@ -1,8 +1,20 @@
-# 🐳 Awesome DSH Plugins
-> **Fork notice:** this repository is a GitHub fork of [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin). All content belongs to its original authors and is republished under the original license; see the commit history for attribution.
-> **转载声明：** 本仓库是上游 [bruc3van/awesome-dsh-plugin](https://github.com/bruc3van/awesome-dsh-plugin) 的 GitHub fork（转载），内容版权归原作者所有，按原许可证发布，署名见提交历史。
+> ⚠️ **转载声明（Fork Notice）**
+>
+> 本仓库是 GitHub 项目 **[`
+bruc3van/awesome-dsh-plugin
+`](https://github.com/
+bruc3van/awesome-dsh-plugin
+)** 的 Gitee 转载镜像，**并非原始项目**；所有代码与内容的著作权归原作者及贡献者所有，按原许可证发布。
+>
+> This repository is a Gitee repost (mirror) of the GitHub project [`
+bruc3van/awesome-dsh-plugin
+`](https://github.com/
+bruc3van/awesome-dsh-plugin
+) — **not the original project**. All code and content remain the property of their original authors and contributors, published under the original license.
 
-[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/bruc3van-awesome-dsh-plugin)
+# 🐳 Awesome DSH Plugins
+
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/bruc3van.awesome-dsh-plugin)
 
 > 用 30 秒为你的 DeepSeek Harness（DSH）找到合适的插件。
 > 这不是又一个仓库清单：GitHub 上所有打着 `dsh-plugin` 标签的仓库由脚本每天自动抓取，再经人工逐个核实——真插件进目录，蹭热度的进黑名单，每条剔除理由公开可查。并告诉你每个插件适合谁、从哪里开始。
@@ -258,3 +270,14 @@ mindmap
 ## License
 
 本列表采用 [MIT License](./LICENSE) 发布；各收录项目遵循其各自许可证。
+---
+
+> **免责声明 / Disclaimer**
+>
+> 本仓库由 PerryLink 仅作**转载镜像**维护，不拥有、不修改本项目内容，亦不提供任何支持。任何问题、缺陷、建议或 Pull Request，请前往上游 GitHub 仓库提交：<https://github.com/
+bruc3van/awesome-dsh-plugin
+>。本镜像不处理任何 issue / PR / 回复。若项目内容存在任何风险或权利争议，请直接联系上游原作者。
+>
+> This repository is maintained by PerryLink as a mirror/转载 only. PerryLink owns no content here and provides no support. For issues, questions or pull requests, please go to the original repository on GitHub: <https://github.com/
+bruc3van/awesome-dsh-plugin
+>. All risks or rights disputes about the content should be directed to the original authors.
