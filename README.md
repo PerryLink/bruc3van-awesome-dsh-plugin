@@ -1,4 +1,5 @@
 # 🐳 Awesome DSH Plugins
+[![Gitee](https://img.shields.io/badge/Gitee-mirror-c71d23?logo=gitee)](https://gitee.com/perrylink/bruc3van-awesome-dsh-plugin)
 
 > 用 30 秒为你的 DeepSeek Harness（DSH）找到合适的插件。
 > 这不是又一个仓库清单：GitHub 上所有打着 `dsh-plugin` 标签的仓库由脚本每天自动抓取，再经人工逐个核实——真插件进目录，蹭热度的进黑名单，每条剔除理由公开可查。并告诉你每个插件适合谁、从哪里开始。
